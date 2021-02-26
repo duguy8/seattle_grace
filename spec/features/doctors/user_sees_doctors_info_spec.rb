@@ -34,7 +34,22 @@ RSpec.describe "When I visit a doctor's show page" do
       expect(page).to have_content(@doctor.specialty)
       expect(page).to have_content(@doctor.university)
     end
-    it "I see name of hospital where doctor works"
-    it "See names of all patients of this doctor"
+    it "I see name of hospital where doctor works" do
+
+      visit doctor_path(@doctor)
+
+      expect(page).to have_content(@hospital.name)
+    end
+    it "See names of all patients of this doctor" do
+
+      visit doctor_path(@doctor)
+
+      within(".patients") do
+        expect(page).to have_content(@patient1.name)
+        expect(page).to have_content(@patient2.name)
+        expect(page).to have_content(@patient3.name)
+        expect(page).to have_content(@patient4.name)
+      end
+    end
   end
 end
