@@ -1,0 +1,3 @@
+<h1><%= @hospital.name %></h1>
+<h3>Number of Doctors: <%= @hospital.doctors.size %></h3>
+<%= render partial: "universities", locals: { hospital: @hospital } %>
