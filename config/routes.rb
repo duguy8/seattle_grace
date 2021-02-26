@@ -9,4 +9,7 @@ Rails.application.routes.draw do
 
   #doctor_patients
   resources :doctor_patients, only: [:destroy]
+
+  #patients
+  resources :patients, only: [:index]
 end
