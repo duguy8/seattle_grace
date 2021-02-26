@@ -6,6 +6,6 @@ RSpec.describe Hospital, type: :model do
   end
 
   describe "Relationships" do
-    it { should have_many :doctors}
+    it { should have_many :doctors }
   end
 end
